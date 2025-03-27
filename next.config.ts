@@ -1,7 +1,23 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
-  /* config options here */
+/** @type {import('next').NextConfig} */
+const nextConfig = {
+  experimental: {
+    serverActions: true,
+    serverComponentsExternalPackages: [],
+  },
+  
+  images: {
+    domains: ["assets.coingecko.com"],
+  },
+  reactStrictMode: true,
+  trailingSlash: false,
 };
+const withPWA = require("next-pwa")({
+  dest: "public",
+  disable: process.env.NODE_ENV === "development",
+});
 
-export default nextConfig;
+module.exports = withPWA({
+  reactStrictMode: true,
+});
+
+module.exports = nextConfig;
