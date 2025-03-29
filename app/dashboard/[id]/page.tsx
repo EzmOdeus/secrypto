@@ -1,12 +1,15 @@
 import { getCoinDetails } from "@/lib/getCoinDetails";
 
-
+type CoinDetailsPageProps = {
+  params: {
+    id: string;
+  };
+};
 
 export default async function CoinDetailsPage({
+
     params,
-}: {
-    params: { id: string };
-}) {
+}: CoinDetailsPageProps) {
     const coin = await getCoinDetails(params.id); // ✅ دلوقتي صح
 
     if (!coin) {
