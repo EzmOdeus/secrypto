@@ -1,8 +1,6 @@
 import { getCoinDetails } from "@/lib/getCoinDetails";
 
-type Params = {
-    params: { id: string };
-};
+
 
 export default async function CoinDetailsPage({
     params,

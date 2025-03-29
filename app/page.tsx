@@ -16,7 +16,7 @@ export default async function HomePage() {
 
       {/* قائمة العملات */}
       <section className="mt-10">
-        <h2 className="text-xl font-semibold mb-2">Top Coins</h2>
+        <h2 className="text-xl font-semibold mb-2">Top Coins </h2>
         <CoinList  />
       </section>
     </main>

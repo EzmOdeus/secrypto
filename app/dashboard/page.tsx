@@ -2,15 +2,17 @@
 
 import { useEffect, useState } from "react";
 import { getCoins, getNews } from "@/lib/api";
-import { CoinList } from "@/components/CoinList";
 import { AlertsPanel } from "@/components/AlertsPanel";
 import { NewsSection } from "@/components/NewsSection";
 import { CoinCard } from "@/components/CoinCard";
 
 export default function DashboardPage() {
     const [favorites, setFavorites] = useState<string[]>([]);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [alerts, setAlerts] = useState<any[]>([]);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [coins, setCoins] = useState<any[]>([]);
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const [news, setNews] = useState<any[]>([]);
 
     useEffect(() => {
@@ -28,7 +30,7 @@ export default function DashboardPage() {
 
         fetchData();
     }, []);
-
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
     const favoriteCoins = coins.filter((coin: any) => favorites.includes(coin.id));
 
     return (

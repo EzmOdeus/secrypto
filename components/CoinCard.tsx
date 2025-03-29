@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { useFavorites } from "@/app/context/FavoritesContext";
-
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function CoinCard({ id, name, symbol, price, image }: any) {
     const { favorites, toggleFavorite } = useFavorites();
     const isFavorite = favorites.includes(id);
