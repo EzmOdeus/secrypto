@@ -1,3 +1,4 @@
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 export function NewsSection({ articles }: { articles: any[] }) {
     return (
         <section className="mt-8">
