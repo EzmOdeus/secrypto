@@ -1,10 +1,10 @@
 /** @type {import('next').NextConfig} */
 const nextConfig = {
   experimental: {
-    serverActions: true,
-    serverComponentsExternalPackages: [],
+    serverActions: true, // لو عايز تستخدمها
   },
-  
+  serverExternalPackages: [],
+
   images: {
     domains: ["assets.coingecko.com"],
   },
