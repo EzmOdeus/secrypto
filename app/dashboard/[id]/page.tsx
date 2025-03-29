@@ -1,22 +1,13 @@
 import { getCoinDetails } from "@/lib/getCoinDetails";
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function CoinDetailsPage({ params}: any) {
+  const coin = await getCoinDetails(params.id); // ✅ دلوقتي صح
 
-type CoinDetailsPageProps = {
-  params: {
-    id: string;
-  };
-};
+  if (!coin) {
+    return <div className="p-6">Coin not found.</div>;
+  }
 
-export default async function CoinDetailsPage({
-
-    params,
-}: CoinDetailsPageProps) {
-    const coin = await getCoinDetails(params.id); // ✅ دلوقتي صح
-
-    if (!coin) {
-        return <div className="p-6">Coin not found.</div>;
-    }
-
-    return (
+  return (
     <section className="px-6 py-8 space-y-4">
       <h1 className="text-3xl font-bold flex items-center gap-2">
         <img src={coin.image.small} alt={coin.name} className="w-6 h-6" />
