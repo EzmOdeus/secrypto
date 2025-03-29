@@ -1,6 +1,6 @@
 import { notFound } from "next/navigation";
-
-export default async function CoinDetail({ params }: { params: { id: string } }) {
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
+export default async function CoinDetail({ params }:any) {
     const res = await fetch(`https://api.coingecko.com/api/v3/coins/${params.id}`, {
         next: { revalidate: 60 },
     });
