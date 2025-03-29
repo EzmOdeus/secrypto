@@ -1,10 +1,8 @@
 import { CoinList } from "@/components/CoinList";
-import { SearchBar } from "@/components/SearchBar";
 import { NewsSection } from "@/components/NewsSection";
-import { getCoins, getNews } from "@/lib/api";
+import {  getNews } from "@/lib/api";
 
 export default async function HomePage() {
-  const coins = await getCoins();
   const news = await getNews();
 
   return (

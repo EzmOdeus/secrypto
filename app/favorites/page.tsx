@@ -12,6 +12,7 @@ export default function FavoritesPage() {
     useEffect(() => {
         async function load() {
             const all = await getCoins();
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
             const filtered = all.filter((c: any) => favorites.includes(c.id));
             setCoins(filtered);
         }
@@ -22,7 +23,10 @@ export default function FavoritesPage() {
         <section className="px-6 py-8">
             <h1 className="text-2xl font-bold mb-4">⭐ My Favorites</h1>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
-                {coins.map((coin:any) => (
+                
+                
+                {// eslint-disable-next-line @typescript-eslint/no-explicit-any
+                    coins.map((coin: any) => (
                     <CoinCard
                         key={coin.id}
                         id={coin.id}
